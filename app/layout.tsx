@@ -16,16 +16,16 @@ export default function RootLayout({
     <html lang="ja">
       <body className="font-sans">
         {/* ヘッダー */}
-        <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
-          <nav className="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
-            <Link href="/" className="text-xl font-bold text-gray-900">
+        <header className="bg-white border-b border-gray-200">
+          <nav className="max-w-3xl mx-auto px-4 py-3 flex justify-between items-center">
+            <Link href="/" className="text-lg font-bold text-gray-800">
               GERDガイド
             </Link>
-            <div className="flex gap-6 text-sm">
-              <Link href="/" className="text-gray-700 hover:text-gray-900 transition-colors">
+            <div className="flex gap-4 text-sm">
+              <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
                 ホーム
               </Link>
-              <Link href="/about" className="text-gray-700 hover:text-gray-900 transition-colors">
+              <Link href="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
                 このサイトについて
               </Link>
             </div>
