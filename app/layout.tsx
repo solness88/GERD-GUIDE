@@ -19,7 +19,7 @@ export default function RootLayout({
         <header className="bg-white border-b border-gray-200">
           <nav className="max-w-3xl mx-auto px-4 py-3 flex justify-between items-center">
             <Link href="/" className="text-lg font-bold text-gray-800">
-              GERDガイド
+              逆流性食道炎ガイド
             </Link>
             <div className="flex gap-4 text-sm">
               <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
