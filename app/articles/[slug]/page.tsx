@@ -51,6 +51,17 @@ export default async function ArticlePage({
           <MDXRemote source={article.content} />
         </div>
       </article>
+
+      {/* 免責事項(白枠の外) */}
+      <div className="max-w-3xl mx-auto mt-6 px-4">
+        <p className="text-xs text-gray-600 text-center">
+          この記事の内容は参考情報としてお読みください。
+          <Link href="/about#disclaimer" className="text-blue-600 hover:underline mx-1">
+            免責事項
+          </Link>
+          をお読みの上、症状や治療については、必ず医師にご相談ください。
+        </p>
+      </div>
     </div>
   );
 }

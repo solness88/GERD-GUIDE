@@ -63,7 +63,7 @@ export default function AboutPage() {
               </ul>
             </section>
 
-            <section className="mb-8">
+            <section className="mb-8" id="disclaimer">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 免責事項
               </h2>

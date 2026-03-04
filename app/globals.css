@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* ヘッダーの高さ分調整 */
+}
+
 /* MDX記事のスタイリング */
 .prose {
   color: #1f2937;
@@ -22,7 +27,7 @@
 }
 
 .prose h3 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 700;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
