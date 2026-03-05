@@ -3,7 +3,7 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "GERDガイド | 逆流性食道炎・バレット食道の情報サイト",
+  title: "逆流性食道炎ガイド | 当事者が語る症状・治療・生活の工夫",
   description: "逆流性食道炎・バレット食道について、当事者が調べた情報と体験をまとめた情報サイトです。",
 };
 

@@ -9,7 +9,7 @@ export type Article = {
   title: string;
   excerpt: string;
   date: string;
-  categories: string[]
+  category: string[]
   content: string;
 };
 
@@ -42,7 +42,7 @@ export function getAllArticles(): Article[] {
         title: data.title || 'タイトルなし',
         excerpt: data.excerpt || '',
         date: data.date || '',
-        categories: Array.isArray(data.categories) ? data.categories : data.categories ? [data.categories] : ['その他'],
+        category: data.category || 'その他',
         content,
       };
     });
@@ -70,7 +70,7 @@ export function getArticleBySlug(slug: string): Article {
     title: data.title || 'タイトルなし',
     excerpt: data.excerpt || '',
     date: data.date || '',
-    categories: Array.isArray(data.categories) ? data.categories : data.categories ? [data.categories] : ['その他'],
+    category: data.category || 'その他',
     content,
   };
 }

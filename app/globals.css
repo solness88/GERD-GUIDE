@@ -1,17 +1,15 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* ヘッダーの高さ分調整 */
-}
-
 /* MDX記事のスタイリング */
 .prose {
   color: #1f2937;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: none;
 }
 
 .prose h1 {
-  font-size: 1.875rem;
+  font-size: 2.25rem;
   font-weight: 700;
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -19,7 +17,7 @@ html {
 }
 
 .prose h2 {
-  font-size: 1.5rem;
+  font-size: 1.875rem;
   font-weight: 700;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
@@ -27,7 +25,7 @@ html {
 }
 
 .prose h3 {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
@@ -35,7 +33,7 @@ html {
 }
 
 .prose h4 {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 700;
   margin-top: 0.75rem;
   margin-bottom: 0.5rem;
@@ -60,7 +58,7 @@ html {
 
 .prose p {
   margin-bottom: 1rem;
-  line-height: 1.75;
+  line-height: 1.8;
 }
 
 .prose ul {
@@ -115,4 +113,9 @@ html {
   padding-left: 1rem;
   font-style: italic;
   margin: 1rem 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
