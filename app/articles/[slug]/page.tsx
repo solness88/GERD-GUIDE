@@ -9,6 +9,31 @@ export async function generateStaticParams() {
   }));
 }
 
+const components = {
+  a: ({ href, children, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { children?: React.ReactNode }) => {
+    const isExternal = href?.startsWith('http');
+    
+    if (isExternal) {
+      return (
+        <a 
+          href={href} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          {...props}
+        >
+          {children}
+        </a>
+      );
+    }
+    
+    return (
+      <Link href={href || ''} {...props}>
+        {children}
+      </Link>
+    );
+  },
+};
+
 export default async function ArticlePage({ 
   params 
 }: { 
@@ -40,7 +65,7 @@ export default async function ArticlePage({
           </div>
 
           {/* タイトル */}
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">
             {article.title}
           </h1>
 
@@ -50,8 +75,8 @@ export default async function ArticlePage({
           </div>
 
           {/* 記事本文 */}
-          <div className="prose prose-lg max-w-none">
-            <MDXRemote source={article.content} />
+          <div className="prose max-w-none">
+            <MDXRemote source={article.content} components={components} />
           </div>
         </div>
       </article>
