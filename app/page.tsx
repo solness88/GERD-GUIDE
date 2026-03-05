@@ -42,7 +42,7 @@ export default function Home() {
                     <div className="flex items-center gap-3 mb-2 text-sm text-gray-500">
                       <time>{article.date}</time>
                       <span className="inline-block px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">
-                        {article.category}
+                        {article.categories}
                       </span>
                     </div>
                     

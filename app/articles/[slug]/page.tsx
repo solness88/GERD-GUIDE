@@ -32,7 +32,7 @@ export default async function ArticlePage({
         {/* カテゴリ */}
         <div className="mb-4">
           <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
-            {article.category}
+            {article.categories}
           </span>
         </div>
 
