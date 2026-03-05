@@ -18,7 +18,7 @@ export default async function ArticlePage({
   const article = getArticleBySlug(slug);
 
   return (
-    <div className="min-h-screen bg-[#d9cdb9] py-8">
+    <div className="min-h-screen bg-[#d9cdb9] px-4 py-8">
       <article className="max-w-3xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
 
         <div className="px-8 py-12">
