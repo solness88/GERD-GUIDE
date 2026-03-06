@@ -65,7 +65,7 @@ export default async function ArticlePage({
                 src={article.image} 
                 alt={article.title}
                 fill
-                className="object-cover rounded-t-lg"
+                className="w-full h-auto"
                 priority
               />
             </div>
