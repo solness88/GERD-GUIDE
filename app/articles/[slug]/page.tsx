@@ -1,6 +1,7 @@
 import { getArticleBySlug, getAllSlugs } from "@/lib/articles";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import Image from "next/image";
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -57,6 +58,19 @@ export default async function ArticlePage({
             <span>{article.title}</span>
           </div>
 
+          {/* アイキャッチ画像 */}
+          {article.image && (
+            <div className="mb-6 relative w-full h-64 md:h-96">
+              <Image 
+                src={article.image} 
+                alt={article.title}
+                fill
+                className="object-cover rounded-t-lg"
+                priority
+              />
+            </div>
+          )}
+
           {/* カテゴリ */}
           <div className="mb-4">
             <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
@@ -79,34 +93,22 @@ export default async function ArticlePage({
             <MDXRemote source={article.content} components={components} />
           </div>
 
-
-
-
-{/* トップに戻るリンク */}
-<div className="mt-12 flex justify-center gap-4 flex-wrap">
-  <Link 
-    href="/" 
-    className="inline-block px-6 py-3 text-gray-800 rounded-lg hover:bg-amber-100 transition-colors"
-  >
-    ◀ トップページに戻る
-  </Link>
-  
-  <a 
-    href="#top"
-    className="inline-block px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
-  >
-    🔼 ページ上部へ
-  </a>
-</div>
-
-
-
-
-
-
-
-
-
+          {/* トップに戻るリンク */}
+          <div className="mt-12 flex justify-center gap-4 flex-wrap">
+            <Link 
+              href="/" 
+              className="inline-block px-6 py-3 text-gray-800 rounded-lg hover:bg-amber-100 transition-colors"
+            >
+              ◀ トップページに戻る
+            </Link>
+            
+            <a 
+              href="#top"
+              className="inline-block px-6 py-3 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
+            >
+              🔼 ページ上部へ
+            </a>
+          </div>
         </div>
       </article>
 

@@ -9,7 +9,8 @@ export type Article = {
   title: string;
   excerpt: string;
   date: string;
-  category: string[]
+  category: string;
+  image?: string;
   content: string;
 };
 
@@ -43,6 +44,7 @@ export function getAllArticles(): Article[] {
         excerpt: data.excerpt || '',
         date: data.date || '',
         category: data.category || 'その他',
+        image: data.image,
         content,
       };
     });
@@ -71,6 +73,7 @@ export function getArticleBySlug(slug: string): Article {
     excerpt: data.excerpt || '',
     date: data.date || '',
     category: data.category || 'その他',
+    image: data.image,
     content,
   };
 }
