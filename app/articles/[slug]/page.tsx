@@ -46,11 +46,10 @@ export default async function ArticlePage({
   return (
     <div className="min-h-screen bg-[#d9cdb9] px-4 py-8">
       <article className="max-w-3xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
-
-        <div className="px-8 py-12">
+        <div className="px-4 pt-6 pb-12 md:px-8 md:pt-12">
 
           {/* パンくずリスト */}
-          <div className="mb-8 text-sm text-gray-500">
+          <div className="hidden md:block mb-8 text-sm text-gray-500">
             <Link href="/" className="hover:text-gray-900">
               ホーム
             </Link>
@@ -60,7 +59,7 @@ export default async function ArticlePage({
 
           {/* アイキャッチ画像 */}
           {article.image && (
-            <div className="-mx-4 md:mx-0 mb-6">
+            <div className="md:mx-0 mb-6">
               <Image 
                 src={article.image} 
                 alt={article.title}
@@ -73,7 +72,7 @@ export default async function ArticlePage({
           )}
 
           {/* カテゴリ */}
-          <div className="mb-4">
+          <div className="hidden md:block mb-4">
             <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
               {article.category}
             </span>
