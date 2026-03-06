@@ -58,18 +58,19 @@ export default async function ArticlePage({
             <span>{article.title}</span>
           </div>
 
-          {/* アイキャッチ画像 */}
-          {article.image && (
-            <div className="mb-6 relative w-full h-64 md:h-96">
-              <Image 
-                src={article.image} 
-                alt={article.title}
-                fill
-                className="w-full h-auto"
-                priority
-              />
-            </div>
-          )}
+{/* アイキャッチ画像 */}
+{article.image && (
+  <div className="w-full">
+    <Image 
+      src={article.image} 
+      alt={article.title}
+      width={960}
+      height={540}
+      className="w-full h-auto"
+      priority
+    />
+  </div>
+)}
 
           {/* カテゴリ */}
           <div className="mb-4">
