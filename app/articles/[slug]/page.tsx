@@ -78,6 +78,35 @@ export default async function ArticlePage({
           <div className="prose max-w-none">
             <MDXRemote source={article.content} components={components} />
           </div>
+
+
+
+
+{/* トップに戻るリンク */}
+<div className="mt-12 flex justify-center gap-4 flex-wrap">
+  <Link 
+    href="/" 
+    className="inline-block px-6 py-3 text-gray-800 rounded-lg hover:bg-amber-100 transition-colors"
+  >
+    ◀ トップページに戻る
+  </Link>
+  
+  <a 
+    href="#top"
+    className="inline-block px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
+  >
+    🔼 ページ上部へ
+  </a>
+</div>
+
+
+
+
+
+
+
+
+
         </div>
       </article>
 
