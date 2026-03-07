@@ -79,7 +79,7 @@ export default async function ArticlePage({
           </div>
 
           {/* タイトル */}
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">
             {article.title}
           </h1>
 
@@ -99,14 +99,14 @@ export default async function ArticlePage({
               href="/" 
               className="inline-block px-6 py-3 text-gray-800 rounded-lg hover:bg-amber-100 transition-colors"
             >
-              ◀ トップページに戻る
+              ⏪ トップページに戻る
             </Link>
             
             <a 
               href="#top"
               className="inline-block px-6 py-3 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
             >
-              🔼 ページ上部へ
+              ⏫ ページ上部へ
             </a>
           </div>
         </div>
