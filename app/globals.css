@@ -15,7 +15,7 @@
 }
 
 .prose h1 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;       /* スマホ: 20px(h2と同じ) */
   font-weight: 700;
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -29,7 +29,7 @@
 }
 
 .prose h2 {
-  font-size: 1.25rem;
+  font-size: 1.25rem;       /* スマホ: 20px(h1と同じ) */
   font-weight: 700;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
@@ -38,7 +38,7 @@
 
 @media (min-width: 768px) {
   .prose h2 {
-    font-size: 1.875rem;
+    font-size: 1.4rem;
   }
 }
 
