@@ -3,9 +3,15 @@
 /* MDX記事のスタイリング */
 .prose {
   color: #1f2937;
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.8;
   max-width: none;
+}
+
+@media (min-width: 768px) {
+  .prose {
+    font-size: 1.125rem;     /* PC: 18px */
+  }
 }
 
 .prose h1 {
