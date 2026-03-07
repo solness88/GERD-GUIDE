@@ -15,19 +15,31 @@
 }
 
 .prose h1 {
-  font-size: 2.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-top: 2rem;
   margin-bottom: 1rem;
   color: #111827;
 }
 
+@media (min-width: 768px) {
+  .prose h1 {
+    font-size: 2.25rem;
+  }
+}
+
 .prose h2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
   color: #111827;
+}
+
+@media (min-width: 768px) {
+  .prose h2 {
+    font-size: 1.875rem;
+  }
 }
 
 .prose h3 {
