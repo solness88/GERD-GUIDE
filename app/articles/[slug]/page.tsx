@@ -10,6 +10,23 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<{ slug: string }> 
+}) {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
+  
+  return {
+    title: article.title,
+    description: article.excerpt,
+    alternates: {
+      canonical: `https://gerd-guide.com/articles/${slug}`,
+    },
+  };
+}
+
 const components = {
   a: ({ href, children, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { children?: React.ReactNode }) => {
     const isExternal = href?.startsWith('http');
