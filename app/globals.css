@@ -135,28 +135,28 @@
 
 @layer utilities {
   .prose table {
-    /* width: 100%; */
+    width: 100%;
     border-collapse: collapse;
     margin-bottom: 1rem;
     font-size: 0.95rem;
   }
 
   .prose thead {
-    background-color: #f3f4f6;
+    background-color: #cccccc;
   }
 
   .prose th {
     padding: 0.75rem 1rem;
     text-align: left;
     font-weight: 700;
-    border: 1px solid #d1d5db;
+    border: 1px solid #999999;
     color: #111827;
   }
 
   .prose td {
     padding: 0.75rem 1rem;
-    border: 1px solid #d1d5db;
-    color: #374151;
+    border: 1px solid #999999;
+    color: #111827;
   }
 
   .prose tr:nth-child(even) {
