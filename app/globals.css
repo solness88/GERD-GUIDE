@@ -135,13 +135,10 @@
 
 @layer utilities {
   .prose table {
-    width: 100%;
+    /* width: 100%; */
     border-collapse: collapse;
     margin-bottom: 1rem;
     font-size: 0.95rem;
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
   }
 
   .prose thead {
