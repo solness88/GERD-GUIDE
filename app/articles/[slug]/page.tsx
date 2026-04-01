@@ -2,6 +2,7 @@ import { getArticleBySlug, getAllSlugs } from "@/lib/articles";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
+import remarkGfm from 'remark-gfm';
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -107,7 +108,15 @@ export default async function ArticlePage({
 
           {/* 記事本文 */}
           <div className="prose max-w-none">
-            <MDXRemote source={article.content} components={components} />
+            <MDXRemote 
+              source={article.content} 
+              components={components}
+              options={{
+                mdxOptions: {
+                  remarkPlugins: [remarkGfm],
+                },
+              }}
+            />
           </div>
 
           {/* トップに戻るリンク */}
