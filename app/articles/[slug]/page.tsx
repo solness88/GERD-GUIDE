@@ -23,7 +23,7 @@ export async function generateMetadata({
     title: article.title,
     description: article.excerpt,
     alternates: {
-      canonical: `https://gerd-guide.com/articles/${slug}`,
+      canonical: `https://www.gerd-guide.com/articles/${slug}`,
     },
   };
 }
