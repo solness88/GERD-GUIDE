@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gerd-guide.com/sitemap.xml
+Sitemap: https://www.gerd-guide.com/sitemap.xml
