@@ -3,6 +3,9 @@ import Link from "next/link";
 export const metadata = {
   title: "このサイトについて | 逆流性食道炎ガイド",
   description: "逆流性食道炎ガイドの運営方針と管理人について",
+  alternates: {
+    canonical: "https://www.gerd-guide.com",
+  },
 };
 
 export default function AboutPage() {
