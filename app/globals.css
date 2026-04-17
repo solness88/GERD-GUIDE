@@ -136,6 +136,7 @@
 @layer utilities {
   .prose table {
     width: 100%;
+    min-width: 400px;
     border-collapse: collapse;
     margin-bottom: 1rem;
     font-size: 0.95rem;
