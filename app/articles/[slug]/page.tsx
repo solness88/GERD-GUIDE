@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import remarkGfm from 'remark-gfm';
+import ScrollToTop from "@/components/ScrollToTop";
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -63,6 +64,14 @@ export default async function ArticlePage({
   const { newerArticle, olderArticle } = getAdjacentArticles(slug);
 
   return (
+
+
+
+    <div className="min-h-screen bg-[#d9cdb9] px-4 py-8">
+    <ScrollToTop />
+
+
+
     <div className="min-h-screen bg-[#d9cdb9] px-4 py-8">
       <article className="max-w-3xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
         <div className="px-4 pt-6 pb-12 md:px-8 md:pt-12">
@@ -124,32 +133,32 @@ export default async function ArticlePage({
           <div className="mt-12 flex justify-between items-center flex-wrap gap-4">
             <div className="flex-1 flex justify-start">
               {olderArticle ? (
-                <a
+                <Link
                   href={`/articles/${olderArticle.slug}`}
                   className="inline-block px-6 py-3 text-gray-800 rounded-lg hover:bg-amber-100 transition-colors"
                 >
                   ⏪ 1つ古い記事へ
-                </a>
+                </Link>
               ) : <div />}
             </div>
 
             <div className="flex-1 flex justify-center">
-              <a 
+              <Link
                 href="#top"
                 className="inline-block px-6 py-3 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
               >
                 ⏫ ページ上部へ
-              </a>
+              </Link>
             </div>
 
             <div className="flex-1 flex justify-end">
               {newerArticle ? (
-                <a
+                <Link
                   href={`/articles/${newerArticle.slug}`}
                   className="inline-block px-6 py-3 text-gray-800 rounded-lg hover:bg-amber-100 transition-colors"
                 >
                   1つ新しい記事へ ⏩
-                </a>
+                </Link>
               ) : <div />}
             </div>
           </div>
@@ -166,6 +175,7 @@ export default async function ArticlePage({
           をお読みの上、症状や治療については、必ず医師にご相談ください。
         </p>
       </div>
+    </div>
     </div>
   );
 }
