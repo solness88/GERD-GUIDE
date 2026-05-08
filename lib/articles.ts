@@ -89,3 +89,16 @@ export function getAllSlugs(): string[] {
     .filter((fileName) => fileName.endsWith('.mdx'))
     .map((fileName) => fileName.replace(/\.mdx$/, ''));
 }
+
+export function getAdjacentArticles(currentSlug: string): {
+  newerArticle: Article | null;
+  olderArticle: Article | null;
+} {
+  const articles = getAllArticles(); // 既に新しい順にソート済み
+  const currentIndex = articles.findIndex((a) => a.slug === currentSlug);
+  
+  return {
+    newerArticle: currentIndex > 0 ? articles[currentIndex - 1] : null,
+    olderArticle: currentIndex < articles.length - 1 ? articles[currentIndex + 1] : null,
+  };
+}

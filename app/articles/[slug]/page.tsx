@@ -1,4 +1,4 @@
-import { getArticleBySlug, getAllSlugs } from "@/lib/articles";
+import { getArticleBySlug, getAllSlugs, getAdjacentArticles } from "@/lib/articles";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
@@ -60,6 +60,7 @@ export default async function ArticlePage({
 }) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
+  const { newerArticle, olderArticle } = getAdjacentArticles(slug);
 
   return (
     <div className="min-h-screen bg-[#d9cdb9] px-4 py-8">
@@ -119,21 +120,38 @@ export default async function ArticlePage({
             />
           </div>
 
-          {/* トップに戻るリンク */}
-          <div className="mt-12 flex justify-center gap-4 flex-wrap">
-            <Link 
-              href="/" 
-              className="inline-block px-6 py-3 text-gray-800 rounded-lg hover:bg-amber-100 transition-colors"
-            >
-              ⏪ トップページに戻る
-            </Link>
-            
-            <a 
-              href="#top"
-              className="inline-block px-6 py-3 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
-            >
-              ⏫ ページ上部へ
-            </a>
+          {/* ナビゲーションリンク */}
+          <div className="mt-12 flex justify-between items-center flex-wrap gap-4">
+            <div className="flex-1 flex justify-start">
+              {olderArticle ? (
+                <Link 
+                  href={`/articles/${olderArticle.slug}`}
+                  className="inline-block px-6 py-3 text-gray-800 rounded-lg hover:bg-amber-100 transition-colors"
+                >
+                  ⏪ 1つ古い記事へ
+                </Link>
+              ) : <div />}
+            </div>
+
+            <div className="flex-1 flex justify-center">
+              <a 
+                href="#top"
+                className="inline-block px-6 py-3 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
+              >
+                ⏫ ページ上部へ
+              </a>
+            </div>
+
+            <div className="flex-1 flex justify-end">
+              {newerArticle ? (
+                <Link 
+                  href={`/articles/${newerArticle.slug}`}
+                  className="inline-block px-6 py-3 text-gray-800 rounded-lg hover:bg-amber-100 transition-colors"
+                >
+                  1つ新しい記事へ ⏩
+                </Link>
+              ) : <div />}
+            </div>
           </div>
         </div>
       </article>
