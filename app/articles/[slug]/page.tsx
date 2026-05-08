@@ -124,12 +124,12 @@ export default async function ArticlePage({
           <div className="mt-12 flex justify-between items-center flex-wrap gap-4">
             <div className="flex-1 flex justify-start">
               {olderArticle ? (
-                <Link 
+                <a
                   href={`/articles/${olderArticle.slug}`}
                   className="inline-block px-6 py-3 text-gray-800 rounded-lg hover:bg-amber-100 transition-colors"
                 >
                   ⏪ 1つ古い記事へ
-                </Link>
+                </a>
               ) : <div />}
             </div>
 
@@ -144,12 +144,12 @@ export default async function ArticlePage({
 
             <div className="flex-1 flex justify-end">
               {newerArticle ? (
-                <Link 
+                <a
                   href={`/articles/${newerArticle.slug}`}
                   className="inline-block px-6 py-3 text-gray-800 rounded-lg hover:bg-amber-100 transition-colors"
                 >
                   1つ新しい記事へ ⏩
-                </Link>
+                </a>
               ) : <div />}
             </div>
           </div>
