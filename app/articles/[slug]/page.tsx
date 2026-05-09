@@ -4,6 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import remarkGfm from 'remark-gfm';
 import ScrollToTop from "@/components/ScrollToTop";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -72,7 +73,6 @@ export default async function ArticlePage({
 
 
 
-    <div className="min-h-screen bg-[#d9cdb9] px-4 py-8">
       <article className="max-w-3xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
         <div className="px-4 pt-6 pb-12 md:px-8 md:pt-12">
 
@@ -85,7 +85,7 @@ export default async function ArticlePage({
             <span>{article.title}</span>
           </div>
 
-          {/* アイキャッチ画像 */}
+          {/* アイキャッチ画像
           {article.image && (
             <div className="md:mx-0 mb-6">
               <Image 
@@ -98,7 +98,32 @@ export default async function ArticlePage({
                 sizes="(max-width: 768px) 100vw, 768px"
               />
             </div>
-          )}
+          )} */}
+
+
+
+
+
+{article.image && (
+  <div className="md:mx-0 mb-6">
+    <Image 
+      src={article.image!}
+      alt={article.title}
+      width={1920}
+      height={1080}
+      className="w-full h-auto"
+      priority
+      sizes="(max-width: 768px) 100vw, 768px"
+      placeholder="blur"
+      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+    />
+  </div>
+)}
+
+
+
+
+
 
           {/* カテゴリ */}
           <div className="hidden md:block mb-4">
@@ -143,14 +168,23 @@ export default async function ArticlePage({
               ) : <div />}
             </div>
 
-            <div className="flex-1 flex justify-center">
+            {/* <div className="flex-1 flex justify-center">
               <Link
                 href="#top"
                 className="inline-block px-6 py-3 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
               >
                 ⏫ ページ上部へ
               </Link>
-            </div>
+            </div> */}
+
+
+
+
+<div className="flex-1 flex justify-center">
+  <ScrollToTopButton />
+</div>
+
+
 
             <div className="flex-1 flex justify-end">
               {newerArticle ? (
@@ -176,7 +210,6 @@ export default async function ArticlePage({
           をお読みの上、症状や治療については、必ず医師にご相談ください。
         </p>
       </div>
-    </div>
     </div>
   );
 }
