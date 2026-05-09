@@ -95,6 +95,7 @@ export default async function ArticlePage({
                 height={1080}
                 className="w-full h-auto"
                 priority
+                sizes="(max-width: 768px) 100vw, 768px"
               />
             </div>
           )}
