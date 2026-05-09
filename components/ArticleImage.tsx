@@ -14,9 +14,10 @@ export default function ArticleImage({ src, alt }: Props) {
   return (
     <div className="relative">
       {!loaded && (
-        <div className="aspect-video w-full flex items-center justify-center bg-gray-200 rounded">
-          <p className="text-gray-500 text-2xl font-bold px-4 text-center">逆流性食道炎ガイド</p>
-        </div>
+        <div className="aspect-video w-full flex flex-col items-center justify-center bg-gray-200 rounded">
+        <p className="text-gray-600 text-3xl font-bold px-4 text-center">逆流性食道炎ガイド</p>
+        <p className="text-gray-400 text-sm mt-2">gerd-guide.com</p>
+      </div>
       )}
       <Image
         src={src}
