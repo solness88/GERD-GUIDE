@@ -16,7 +16,7 @@ export default function ArticleImage({ src, alt }: Props) {
       {!loaded && (
         <div className="aspect-video w-full flex flex-col items-center justify-center bg-gray-200 rounded">
         <p className="text-gray-600 text-3xl font-bold px-4 text-center">逆流性食道炎ガイド</p>
-        <p className="text-gray-400 text-sm mt-2">gerd-guide.com</p>
+        <p className="text-gray-400 text-2xl mt-2">gerd-guide.com</p>
       </div>
       )}
       <Image
