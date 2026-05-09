@@ -5,6 +5,7 @@ import Image from "next/image";
 import remarkGfm from 'remark-gfm';
 import ScrollToTop from "@/components/ScrollToTop";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import ArticleImage from "@/components/ArticleImage";
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -103,20 +104,10 @@ export default async function ArticlePage({
 
 
 
-
+{/* アイキャッチ画像 */}
 {article.image && (
   <div className="md:mx-0 mb-6">
-    <Image 
-      src={article.image!}
-      alt={article.title}
-      width={1920}
-      height={1080}
-      className="w-full h-auto"
-      priority
-      sizes="(max-width: 768px) 100vw, 768px"
-      placeholder="blur"
-      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
-    />
+    <ArticleImage src={article.image} alt={article.title} />
   </div>
 )}
 
