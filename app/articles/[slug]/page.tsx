@@ -86,35 +86,12 @@ export default async function ArticlePage({
             <span>{article.title}</span>
           </div>
 
-          {/* アイキャッチ画像
+          {/* アイキャッチ画像 */}
           {article.image && (
             <div className="md:mx-0 mb-6">
-              <Image 
-                src={article.image} 
-                alt={article.title}
-                width={1920}
-                height={1080}
-                className="w-full h-auto"
-                priority
-                sizes="(max-width: 768px) 100vw, 768px"
-              />
+              <ArticleImage src={article.image} alt={article.title} />
             </div>
-          )} */}
-
-
-
-
-{/* アイキャッチ画像 */}
-{article.image && (
-  <div className="md:mx-0 mb-6">
-    <ArticleImage src={article.image} alt={article.title} />
-  </div>
-)}
-
-
-
-
-
+          )}
 
           {/* カテゴリ */}
           <div className="hidden md:block mb-4">
@@ -147,45 +124,35 @@ export default async function ArticlePage({
           </div>
 
           {/* ナビゲーションリンク */}
-          <div className="mt-12 flex justify-between items-center flex-wrap gap-4">
-            <div className="flex-1 flex justify-start">
-              {olderArticle ? (
-                <Link
-                  href={`/articles/${olderArticle.slug}`}
-                  className="inline-block px-6 py-3 text-gray-800 rounded-lg hover:bg-amber-100 transition-colors"
-                >
-                  ⏪ 1つ古い記事へ
-                </Link>
-              ) : <div />}
+          <div className="mt-12 flex flex-col gap-3">
+            <div className="flex justify-between gap-3">
+              <div className="flex-1">
+                {olderArticle ? (
+                <a  
+                    href={"/articles/" + olderArticle.slug}
+                    className="block px-4 py-3 text-gray-800 rounded-lg hover:bg-amber-100 transition-colors"
+                  >
+                    <div className="text-base text-gray-500 mb-1">◀ 前の記事</div>
+                    <div className="text-base font-medium leading-snug">{olderArticle.title}</div>
+                  </a>
+                ) : <div className="flex-1" />}
+              </div>
+
+              <div className="flex-1 text-right">
+                {newerArticle ? (
+                <a  
+                    href={"/articles/" + newerArticle.slug}
+                    className="block px-4 py-3 text-gray-800 rounded-lg hover:bg-amber-100 transition-colors"
+                  >
+                    <div className="text-base text-gray-500 mb-1">次の記事 ▶</div>
+                    <div className="text-base font-medium leading-snug">{newerArticle.title}</div>
+                  </a>
+                ) : <div className="flex-1" />}
+              </div>
             </div>
 
-            {/* <div className="flex-1 flex justify-center">
-              <Link
-                href="#top"
-                className="inline-block px-6 py-3 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
-              >
-                ⏫ ページ上部へ
-              </Link>
-            </div> */}
-
-
-
-
-<div className="flex-1 flex justify-center">
-  <ScrollToTopButton />
-</div>
-
-
-
-            <div className="flex-1 flex justify-end">
-              {newerArticle ? (
-                <Link
-                  href={`/articles/${newerArticle.slug}`}
-                  className="inline-block px-6 py-3 text-gray-800 rounded-lg hover:bg-amber-100 transition-colors"
-                >
-                  1つ新しい記事へ ⏩
-                </Link>
-              ) : <div />}
+            <div className="flex justify-center">
+              <ScrollToTopButton />
             </div>
           </div>
         </div>
