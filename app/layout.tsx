@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: "逆流性食道炎ガイド | 当事者が語る症状・治療・生活の工夫",
@@ -36,6 +37,7 @@ export default function RootLayout({
         </header>
         {children}
       </body>
+      <GoogleAnalytics gaId="G-85N4G2ZESK" />
     </html>
   );
 }
