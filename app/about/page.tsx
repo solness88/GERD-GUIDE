@@ -16,7 +16,7 @@ export default function AboutPage() {
           {/* パンくずリスト */}
           <div className="mb-8 text-sm text-gray-500">
             <Link href="/" className="hover:text-gray-900">
-              ホーム
+              記事一覧
             </Link>
             <span className="mx-2">/</span>
             <span>このサイトについて</span>

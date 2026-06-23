@@ -80,7 +80,7 @@ export default async function ArticlePage({
           {/* パンくずリスト */}
           <div className="hidden md:block mb-8 text-sm text-gray-500">
             <Link href="/" className="hover:text-gray-900">
-              ホーム
+              記事一覧
             </Link>
             <span className="mx-2">/</span>
             <span>{article.title}</span>
