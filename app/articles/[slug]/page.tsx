@@ -15,13 +15,34 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ 
-  params 
-}: { 
-  params: Promise<{ slug: string }> 
-}) {
+// export async function generateMetadata({ 
+//   params 
+// }: { 
+//   params: Promise<{ slug: string }> 
+// }) {
+//   const { slug } = await params;
+//   const article = getArticleBySlug(slug);
+  
+//   return {
+//     title: article.title,
+//     description: article.excerpt,
+//     alternates: {
+//       canonical: `https://www.gerd-guide.com/articles/${slug}`,
+//     },
+//   };
+// }
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
+  
+  if (!article) {
+    return { title: 'Not Found' };
+  }
   
   return {
     title: article.title,
