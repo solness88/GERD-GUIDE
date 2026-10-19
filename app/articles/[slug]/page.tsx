@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm';
 import ScrollToTop from "@/components/ScrollToTop";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import ArticleImage from "@/components/ArticleImage";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -63,6 +64,11 @@ export default async function ArticlePage({
 }) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
+
+  if (!article) {
+    notFound();
+  }
+
   const { newerArticle, olderArticle } = getAdjacentArticles(slug);
 
   return (

@@ -57,11 +57,32 @@ export function getAllArticles(): Article[] {
 }
 
 // 特定の記事を取得
-export function getArticleBySlug(slug: string): Article {
+// export function getArticleBySlug(slug: string): Article {
+//   const fullPath = path.join(articlesDirectory, `${slug}.mdx`);
+  
+//   if (!fs.existsSync(fullPath)) {
+//     throw new Error(`Article not found: ${slug}`);
+//   }
+  
+//   const fileContents = fs.readFileSync(fullPath, 'utf8');
+//   const { data, content } = matter(fileContents);
+  
+//   return {
+//     slug,
+//     title: data.title || 'タイトルなし',
+//     excerpt: data.excerpt || '',
+//     date: data.date || '',
+//     category: data.category || 'その他',
+//     image: data.image,
+//     content,
+//   };
+// }
+// 特定の記事を取得
+export function getArticleBySlug(slug: string): Article | null {
   const fullPath = path.join(articlesDirectory, `${slug}.mdx`);
   
   if (!fs.existsSync(fullPath)) {
-    throw new Error(`Article not found: ${slug}`);
+    return null; // throwではなくnullを返す
   }
   
   const fileContents = fs.readFileSync(fullPath, 'utf8');
